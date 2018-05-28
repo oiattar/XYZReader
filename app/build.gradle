@@ -24,6 +24,8 @@ android {
 }
 
 dependencies {
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    implementation "com.android.support:design:$androidSupportVersion"
     implementation "com.android.support:support-v4:$androidSupportVersion"
     implementation "com.android.support:support-v13:$androidSupportVersion"
     implementation "com.android.support:appcompat-v7:$androidSupportVersion"
