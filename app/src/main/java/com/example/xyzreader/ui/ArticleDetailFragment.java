@@ -51,7 +51,6 @@ public class ArticleDetailFragment extends Fragment implements
     private Toolbar mToolbar;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private ImageView mPhotoView;
-    private FloatingActionButton mFab;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -101,7 +100,7 @@ public class ArticleDetailFragment extends Fragment implements
 
         mToolbar = mRootView.findViewById(R.id.toolbar);
         mPhotoView = mRootView.findViewById(R.id.photo);
-        mFab = mRootView.findViewById(R.id.share_fab);
+        FloatingActionButton mFab = mRootView.findViewById(R.id.share_fab);
 
         getActivityCast().setSupportActionBar(mToolbar);
         ActionBar actionBar = getActivityCast().getSupportActionBar();
