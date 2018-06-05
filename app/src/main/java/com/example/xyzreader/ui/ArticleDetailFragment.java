@@ -8,10 +8,13 @@ import android.database.Cursor;
 import java.util.Date;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -25,6 +28,8 @@ import com.bumptech.glide.Glide;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.util.DateUtil;
+import com.github.florent37.glidepalette.BitmapPalette;
+import com.github.florent37.glidepalette.GlidePalette;
 
 import static com.example.xyzreader.util.DateUtil.parseStringDate;
 
@@ -159,7 +164,7 @@ public class ArticleDetailFragment extends Fragment implements
             String imageUrl = mCursor.getString(ArticleLoader.Query.PHOTO_URL);
             Glide.with(this)
                     .load(imageUrl)
-                    /*.listener(GlidePalette.with(imageUrl)
+                    .listener(GlidePalette.with(imageUrl)
                             .intoCallBack(new BitmapPalette.CallBack() {
                                 @Override
                                 public void onPaletteLoaded(@Nullable Palette palette) {
@@ -173,7 +178,7 @@ public class ArticleDetailFragment extends Fragment implements
                                     }
                                 }
                             })
-                    )*/
+                    )
                     .into(mPhotoView);
         } else {
             mRootView.setVisibility(View.GONE);
