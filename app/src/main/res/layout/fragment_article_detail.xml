@@ -91,8 +91,7 @@
                 android:id="@+id/article_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="@integer/max_text_lines"
-                android:ellipsize="middle"
+                android:ellipsize="end"
                 android:layout_marginTop="@dimen/large_margin" />
 
         </LinearLayout>
