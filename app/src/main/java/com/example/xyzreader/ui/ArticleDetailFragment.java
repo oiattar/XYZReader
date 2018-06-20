@@ -98,21 +98,10 @@ public class ArticleDetailFragment extends Fragment implements
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
-        mToolbar = mRootView.findViewById(R.id.toolbar);
-        mPhotoView = mRootView.findViewById(R.id.photo);
+        mToolbar = getActivity().findViewById(R.id.toolbar);
+        mPhotoView = getActivity().findViewById(R.id.photo);
         FloatingActionButton mFab = mRootView.findViewById(R.id.share_fab);
-
-        getActivityCast().setSupportActionBar(mToolbar);
-        ActionBar actionBar = getActivityCast().getSupportActionBar();
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setDisplayShowHomeEnabled(true);
-            actionBar.setHomeButtonEnabled(true);
-        }
-
-        mCollapsingToolbarLayout = mRootView.findViewById(R.id.collapsing_toolbar);
-        mCollapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
+        mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
 
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
